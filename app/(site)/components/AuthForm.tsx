@@ -3,8 +3,13 @@ import Button from "@/app/components/input/Button";
 import Input from "@/app/components/input/Input";
 import React, { useCallback, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { BsGithub, BsGoogle } from "react-icons/bs";
 import AuthSocialButton from "./AuthSocialButton";
-
+import { Philosopher } from "@next/font/google";
+export const font2 = Philosopher({
+  subsets: ["latin"],
+  weight: ["700"],
+});
 type Props = {};
 type Variant = "LOGIN" | "REGISTER";
 
@@ -47,7 +52,7 @@ function AuthForm({}: Props) {
       <div className="bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10">
         <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
           {variant === "REGISTER" && (
-            <Input id="name" label="Name" register={register} errors={errors} />
+            <Input id="name" label="Name" register={register} errors={errors} disabled={isLoading}/>
           )}
           <Input
             id="email"
@@ -55,6 +60,7 @@ function AuthForm({}: Props) {
             type="email"
             register={register}
             errors={errors}
+            disabled={isLoading}
           />
           <Input
             id=" password"
@@ -62,6 +68,7 @@ function AuthForm({}: Props) {
             type="password"
             register={register}
             errors={errors}
+            disabled={isLoading}
           />
           <div>
             <Button disabled={isLoading} fullWidth type="submit">
@@ -74,14 +81,34 @@ function AuthForm({}: Props) {
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-gray-300" />
             </div>
-            <div className="relative flex justify-center text-sm">
+            <div className="relative flex justify-center text-base">
               <span className="bg-white px-2 text-gray-500">
-                Or continue with
+                <h2 className={font2.className}>Or continue with</h2>
               </span>
             </div>
           </div>
           <div className="mt-6 flex gap-2 ">
-            <AuthSocialButton/>
+            <AuthSocialButton
+              icon={BsGithub}
+              onClick={() => socialAction("github")}
+            />
+            <AuthSocialButton
+              icon={BsGoogle}
+              onClick={() => socialAction("google")}
+            />
+          </div>
+        </div>
+        <div className="flex gap-2 justify-center text-base mt-6 px-2 text-gray-500">
+          <div className={font2.className}>
+            {variant === "LOGIN"
+              ? "New to Raj_Messanger?"
+              : "Already Have an account"}
+          </div>
+          <div
+            onClick={toogleVariant}
+            className={`${font2.className} underline cursor-pointer`}
+          >
+            {variant === "LOGIN" ? "Create a new account" : "Login"}
           </div>
         </div>
       </div>

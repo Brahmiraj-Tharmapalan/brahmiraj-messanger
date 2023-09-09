@@ -1,10 +1,10 @@
 "use client";
 import clsx from "clsx";
 import React from "react";
-import { Saira } from "@next/font/google";
-export const font2 = Saira({
+import { Philosopher } from "@next/font/google";
+export const font2 = Philosopher({
   subsets: ["latin"],
-  weight: ["500"],
+  weight: ["700"],
 });
 
 type ButtonProps = {
@@ -33,7 +33,7 @@ export default function Button({
         type={type}
         disabled={disabled}
         className={clsx(
-          `flex justify-center rounded-md px-3 py-2 text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2`,
+          `flex justify-center rounded-md px-3 py-2 text-base font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2`,
           font2.className,
           disabled && "opacity-50 cursor-default",
           fullWidth && "w-full",

@@ -1,15 +1,15 @@
 import Image from "next/image";
 import AuthForm from "./components/AuthForm";
 import clsx from "clsx";
-import { El_Messiri } from "@next/font/google";
-export const font1 = El_Messiri({
+import { Berkshire_Swash } from "@next/font/google";
+export const font1 = Berkshire_Swash({
   subsets: ["latin"],
   weight: ["400"],
 });
 
 export default function Home() {
   return (
-    <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8 bg-gray-100">
+    <div className="flex min-h-full flex-col justify-center py-12 lg:py-0 sm:px-6 lg:px-8 bg-gray-100">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <Image
           src={"/images/logo.png"}

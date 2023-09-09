@@ -1,3 +1,22 @@
+heading - Berkshire_Swash
+import { Berkshire_Swash } from "@next/font/google";
+export const font1 = Berkshire_Swash({
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
+name/button/label - Philosopher
+
+import { Philosopher } from "@next/font/google";
+export const font2 = Philosopher({
+  subsets: ["latin"],
+  weight: ["700"],
+});
+
+
 for text message - Montserrat
-name - Saira
-heading - Blinker / El_Messiri
+import { Montserrat } from "@next/font/google";
+export const font1 = Montserrat({
+  subsets: ["latin"],
+  weight: ["500"],
+});
