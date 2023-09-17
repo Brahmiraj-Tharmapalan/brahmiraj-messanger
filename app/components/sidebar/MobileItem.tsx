@@ -26,7 +26,7 @@ function MobileItem({ href, icon: Icon, active, onClick }: MobileItemProps) {
         active
       )}
     >
-      <Icon classname="h-6 w-6" />
+      <Icon className="h-6 w-6" />
     </Link>
   );
 }
